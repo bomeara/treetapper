@@ -1,0 +1,3 @@
+html dir has pages
+html/templates has template files for page design
+html/functions has simple functions
