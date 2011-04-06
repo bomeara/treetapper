@@ -14,7 +14,10 @@ cellspacing=\"5\">
 <?PHP 
 #$svnversion = system('svnversion', $retval);
 #echo "TreeTapper version $svnversion\n<br>";
-if ($_SESSION['user'] && $_SESSION['pass']) {
+
+
+
+if (isset($_SESSION['user']) && isset($_SESSION['pass'])) {
 	$result = pg_query($db,"SELECT person_id, person_first, person_last FROM personhiddeninfo, person WHERE personhiddeninfo_password='$_SESSION[pass]' AND personhiddeninfo_email='$_SESSION[user]' AND personhiddeninfo_personid=person_id") or die("Couldn't query the user-database.");
 	if (pg_numrows($result)==1) {
 		echo "Logged in as <br /><a href=\"".$treetapperbaseurl."/person/".pg_fetch_result($result,0,0)."\">".pg_fetch_result($result,0,1)." ".pg_fetch_result($result,0,2)."</a>";
@@ -24,7 +27,7 @@ if ($_SESSION['user'] && $_SESSION['pass']) {
 	}
 	
 }
-else if ($_SESSION['user']) {
+else if (isset($_SESSION['user'])) {
 	echo "User name ".$_SESSION['user']." entered but missing password";
 }
 else {

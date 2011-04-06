@@ -23,7 +23,7 @@ for ($lt = 0; $lt < pg_numrows($result); $lt++) {
 		echo "YAHOO.util.Event.addListener(window, \"load\", function() {";
 		echo "
 			YAHOO.example.XHR_Text = new function() {
-	//alert(\"Now in selectiontable_generic for ".pg_fetch_result($result,$lt,0)."\");
+//	alert(\"Now in selectiontable_generic for ".pg_fetch_result($result,$lt,0)."\");
 				
 				
 				var myColumnDefs = [

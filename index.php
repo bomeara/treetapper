@@ -2,9 +2,8 @@
 $_GET['pagetitle']="TreeTapper.org";
 include('templates/template_pagestart.php');
 include ('templates/dblogin.php'); //connection in $db
-echo("<p>This is a site for finding tools to better understand biology using trees, and to identify areas where tools are missing. It's not yet fully operational, but poke around the menus for more info; you should also go to the <a href=\"http://treetapper-dev.blogspot.com/\">development blog</a> to see how the site is being created and its current status. I would really appreciate any suggestions you have, too: email me at ");
-	 ?>
-	 <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#99;&#111;&#109;&#101;&#97;&#114;&#97;&#64;&#110;&#101;&#115;&#99;&#101;&#110;&#116;&#46;&#111;&#114;&#103;">&#98;&#99;&#111;&#109;&#101;&#97;&#114;&#97;&#64;&#110;&#101;&#115;&#99;&#101;&#110;&#116;&#46;&#111;&#114;&#103;</a>
+echo("<p>This is a site for finding tools to better understand biology using trees, and to identify areas where tools are missing. It's not yet fully operational, but poke around the menus for more info; you should also go to the <a href=\"http://treetapper-dev.blogspot.com/\">development blog</a> to see how the site is being created and its current status. I would really appreciate any suggestions you have, too: email me at <a href='bomeara@utk.edu'>bomeara@utk.edu</a>.");
+	?>
 	 <?PHP
 	 echo ("</p><br />");
 $personquery=pg_query($db,"SELECT count(person_id) from person");
