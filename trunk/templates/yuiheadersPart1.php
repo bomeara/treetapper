@@ -1,6 +1,6 @@
 <?PHP
 //use YUI Loader
-$yuitarget="http://www.treetapper.org/yui/2.6.0/build";
+$yuitarget="http://treetapper.org/yui/2.6.0/build";
 //$yuitarget="http://yui.yahooapis.com/2.6.0/build";
 echo "
 

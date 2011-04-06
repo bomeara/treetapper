@@ -44,7 +44,7 @@ function scaleY ($lng) {
 }
 
 function plottree ($parentradius, $parentangle, $currentdepthcount, $parentcirclefraction, $parentfromstring, $parentwherestring, $parentlabel, $parentactualmethodstring, $parentactualsoftwarestring, $parentmethodcount, $parentsoftwarecount, $parenturlstring) {	
-	global $totaldepthcount, $circles, $markers, $polylines, $polylinesall, $polylinessoftware, $polylinesmethods, $fullstep, $partstep, $colorarray, $colornames, $tablenamesarray, $tableoptionsarray, $db, $image, $imgWidth, $imgHeight, $maxradius, $colorWhite, $colorRed, $colorGrey, $colorBlack, $colorBlue, $phpcolorarray, $margin, $markerradius, $maxid, $mapstring;
+	global $totaldepthcount, $circles, $markers, $polylines, $polylinesall, $polylinessoftware, $polylinesmethods, $fullstep, $partstep, $colorarray, $colornames, $tablenamesarray, $tableoptionsarray, $db, $image, $imgWidth, $imgHeight, $maxradius, $colorWhite, $colorRed, $colorGrey, $colorBlack, $colorBlue, $phpcolorarray, $margin, $markerradius, $maxid, $mapstring, $treetapperbaseurl;
 	////echo "\n<br>____________________________________________<br>\nIn plottree function: ";
 	////echo "$parentradius, $parentangle, $currentdepthcount, $parentcirclefraction, $parentfromstring, $parentwherestring \n<br>";
 	if ($currentdepthcount<$totaldepthcount) { //not at a terminal yet
@@ -56,7 +56,7 @@ function plottree ($parentradius, $parentangle, $currentdepthcount, $parentcircl
 		$tablename=$tablenamesarray[$currentdepthcount];
 		$fulltablename=$tablename;
 		if (stripos($tablename,"char")!==false) {
-			$fulltablename=charactertype;
+			$fulltablename="charactertype";
 		}
 		////echo "<br>\ntablename = ".$tablename;
 		$currentselectstring="";
@@ -308,6 +308,7 @@ function plottree ($parentradius, $parentangle, $currentdepthcount, $parentcircl
 				$methodfulllabel="[ul][b]Methods[/b]";
 				$softwarelabel="";
 				$softwarefulllabel="[br][/br][ul][b]Software[/b]";
+				$option=0; //Since numrows==1
 				$optionid=pg_fetch_result($currentquery,$option,0);
 				$optionname=pg_fetch_result($currentquery,$option,1);
 				if ($currentdepthcount>0) {

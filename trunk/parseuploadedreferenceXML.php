@@ -48,7 +48,7 @@ if (($_FILES["file"]["type"] != "image/gif")
 		//This section for conversion comes from refbase0.9.0 code
 		$tempDirPath = session_save_path();
 		$sourceText = file_get_contents($_FILES["file"]["tmp_name"]);
-		//echo "$sourceText";
+		echo "$sourceText";
 		$tempFile = tempnam($tempDirPath, "treetapperinput-");
 		$tempFileHandle = fopen($tempFile, "w") or die ("Cannot open $tempFile"); // open temp file with write permission
 		fwrite($tempFileHandle, $sourceText) or die ("Cannot write to $tempFileHandle"); // save data to temp file
@@ -60,13 +60,13 @@ if (($_FILES["file"]["type"] != "image/gif")
 		print_r ($outputVersion);
 		//echo " $outputVersion with output code $errorVersion <br/>";
 		//$resultsVersion=exec("ls -ulth $pathtobibutils", $outputVersion, $errorVersion);
-		//echo "<br />ls ";
+		echo "<br />ls ";
 		//print_r ($outputVersion);
-		//echo " $outputVersion with output code $errorVersion <br/>";
+		echo " $outputVersion with output code $errorVersion <br/>";
 		$cmd=$pathtobibutils."/".$format."2xml ".$tempFile." > ".$outputFile;
-		//echo "<br><br><hr> $cmd <hr><br><br>";
+		echo "<br><br><hr> $cmd <hr><br><br>";
 		$results0=exec($cmd, $output0, $err0);
-		//echo "OUTPUT (result=".$results0." and err = ".$err0.")<hr>".implode("<br>",$output0)."<br><hr>"; //debugging code
+		echo "OUTPUT (result=".$results0." and err = ".$err0.")<hr>".implode("<br>",$output0)."<br><hr>"; //debugging code
 		unlink($tempFile);
 		
 		$newreferences="";
@@ -298,7 +298,7 @@ if (($_FILES["file"]["type"] != "image/gif")
 					$modsstring="'".addslashes($modsstring)."'";
 				}
 				$newquery="INSERT INTO reference (reference_id, reference_title, reference_type, reference_publicationdate, reference_publicationname, reference_volume, reference_issue, reference_startpage, reference_endpage, reference_xml, reference_url, reference_doi, reference_pmid, reference_addedby, reference_approved) VALUES ('$key', $articletitle, $referencetype, $year, $journaltitle, $vol, $issue, $firstpage, $lastpage, $modsstring, $url, $doi, $pmid, $personid, $approved)";
-				//echo "$newquery<br>";
+				echo "$newquery<br>";
 				pg_query($db,$newquery) or die ("Problem connecting");						
 				$newreferences="$newreferences"."<p>Ref $numref: $year \"$articletitle\". $journaltitle $vol($issue): $firstpage-$lastpage</p>";
 				//echo "NEW REF <p>Ref $numref: $year \"$articletitle\". $journaltitle $vol($issue): $firstpage-$lastpage</p>";

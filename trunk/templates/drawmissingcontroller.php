@@ -67,7 +67,7 @@ flush();
 			$updatestring="UPDATE findneedquery SET findneedquery_count=".$querycount." WHERE findneedquery_hash='".$cacheroot."'";
 			$updatequery=pg_query($db, $updatestring);			
 			echo "<div id='findmissingstatus'><br />Using cached file from ".pg_fetch_result($existingfilequery,0,3)." ago";
-			if ($lastdateelsewhere>=$lastcacheupdate) {
+			if ($lastupdateelsewhere>=$lastcacheupdate) {
 				echo ". The new one should be ready in ".$expectedtime." minutes (if you keep this window open) and the page will update.<br /></div>";
 			}
 			else {
@@ -77,7 +77,7 @@ flush();
 						$mapstring=file_get_contents("cache_missingmethods/".$cacheroot.".html");
 			echo "$mapstring";
 			flush();
-						if ($lastdateelsewhere>=$lastcacheupdate) {
+						if ($lastupdateelsewhere>=$lastcacheupdate) {
 				include('drawmissing.php');
 				echo "<script type=\"text/javascript\">updateTargetURL();</script>"; #new figure is ready, so reload
 			}

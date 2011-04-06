@@ -1,7 +1,9 @@
 <?PHP
 
 // Start the login session
-session_start();
+if(!isset($_SESSION)) {
+	session_start();
+}
 $personid="";
 $persontrust="";
 $approved="";

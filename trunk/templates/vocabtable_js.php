@@ -12,9 +12,9 @@ for ($lt = 0; $lt < pg_numrows($result); $lt++) {
 	//	echo (pg_fetch_result($result,$lt,0)." = ".$tablename."\n<br>");
 		$validtablename=1;
 	}
-	//else {
-	//	echo (pg_fetch_result($result,$lt,0)." != ".$tablename."\n<br>");
-	//}
+//	else {
+//		echo (pg_fetch_result($result,$lt,0)." != ".$tablename."\n<br>");
+//	}
 }
 if ($validtablename==1) {
 	if (preg_match('/person/',$tablename)) {
