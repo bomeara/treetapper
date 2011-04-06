@@ -14,7 +14,7 @@ include('templates/template_pagestart.php');
 </p>
 <p><br><b><a name="whatisthiswebsite">What is this website?</a></b>
 
-<br>TreeTapper.org is part of the postdoctoral project of <a href="http://www.brianomeara.info" target="_blank">Brian O'Meara</a>, and its design started in Nov. 2007. Brian is funded by the National Evolutionary Synthesis Center (<a href="http://www.nescent.org" target="_blank">NESCent</a>), which is currently also hosting the service. NESCent, in turn, is funded by NSF grant <a href="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0423641" target="_blank">EF-0423641</a>.<br>The initial postdoc <a href="OMearaPostdocProposal.pdf">proposal</a> (PDF) describes the motivation for the site in in more depth.
+<br>TreeTapper.org was originally part of the postdoctoral project of <a href="http://www.brianomeara.info" target="_blank">Brian O'Meara</a>, and its design started in Nov. 2007. Initial development of this project was funded by the National Evolutionary Synthesis Center (<a href="http://www.nescent.org" target="_blank">NESCent</a>). NESCent, in turn, is funded by NSF grant <a href="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0423641" target="_blank">EF-0423641</a>.<br>The initial postdoc <a href="OMearaPostdocProposal.pdf">proposal</a> (PDF) describes the motivation for the site in in more depth.
 </p>
 <p><br><b><a name="isitready">Is it ready?</b></a>
 
