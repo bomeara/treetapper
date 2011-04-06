@@ -1,0 +1,16 @@
+RewriteEngine on
+RewriteRule ^vocabulary/?$ overview_vocabularies.php [L]
+RewriteRule ^reference/([0123456789]*)$ templates/info_reference.php?referenceid=$1
+RewriteRule ^reference/?$ templates/info_reference.php [L]
+RewriteRule ^method/add/?$ add_method.php [L]
+RewriteRule ^method/([0123456789]*)$ templates/info_method.php?id=$1
+RewriteRule ^method/?$ templates/info_method.php [L]
+RewriteRule ^program/([0123456789]*)$ templates/info_program.php?id=$1
+RewriteRule ^program/?$ templates/info_program.php [L]
+RewriteRule ^software/([0123456789]*)$ templates/info_program.php?id=$1
+RewriteRule ^software/?$ templates/info_program.php [L]
+RewriteRule ^person/?$ templates/info_person.php [L]
+RewriteRule ^person/([0123456789]*)$ templates/info_person.php?id=$1 
+RewriteRule ^.+/templates/(.*)$ templates/$1
+# '404 Not Found' error
+ErrorDocument 404 /404.php
